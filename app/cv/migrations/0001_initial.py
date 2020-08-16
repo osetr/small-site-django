@@ -9,18 +9,36 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Post',
+            name="Post",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=35, verbose_name='Name')),
-                ('date', models.DateTimeField(default=datetime.datetime(2020, 8, 16, 11, 21, 52, 863441), editable=False)),
-                ('phone', phonenumber_field.modelfields.PhoneNumberField(max_length=128, region=None, unique=True)),
-                ('link', models.URLField(max_length=128, verbose_name='CV link')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=35, verbose_name="Name")),
+                (
+                    "date",
+                    models.DateTimeField(
+                        default=datetime.datetime(2020, 8, 16, 11, 21, 52, 863441),
+                        editable=False,
+                    ),
+                ),
+                (
+                    "phone",
+                    phonenumber_field.modelfields.PhoneNumberField(
+                        max_length=128, region=None, unique=True
+                    ),
+                ),
+                ("link", models.URLField(max_length=128, verbose_name="CV link")),
             ],
         ),
     ]

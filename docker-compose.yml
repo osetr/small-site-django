@@ -11,6 +11,9 @@ services:
                 restart: always
                 ports:
                         - "8000:8000"
+                environment:
+                        - SECRET_KEY=${SECRET_KEY}
+                        - PASSWORD=${PASSWORD}
                 depends_on:
                         - mysql_db
                 entrypoint: /bin/bash -c "./entrypoint.sh;"
@@ -21,8 +24,8 @@ services:
                 command: --default-authentication-plugin=mysql_native_password
                 restart: always
                 environment:
-                        MYSQL_DATABASE: 'my_app'
-                        MYSQL_ROOT_PASSWORD: ${PASSWORD}
+                        - MYSQL_DATABASE='my_app'
+                        - MYSQL_ROOT_PASSWORD=${PASSWORD}
                 ports:
                         - 3306:3306
                 expose:

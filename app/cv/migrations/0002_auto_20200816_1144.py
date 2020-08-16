@@ -7,18 +7,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('cv', '0001_initial'),
+        ("cv", "0001_initial"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='post',
-            old_name='name',
-            new_name='full_name',
+            model_name="post", old_name="name", new_name="full_name",
         ),
         migrations.AlterField(
-            model_name='post',
-            name='date',
-            field=models.DateTimeField(default=datetime.datetime(2020, 8, 16, 11, 43, 58, 276151), editable=False),
+            model_name="post",
+            name="date",
+            field=models.DateTimeField(
+                default=datetime.datetime(2020, 8, 16, 11, 43, 58, 276151),
+                editable=False,
+            ),
         ),
     ]
