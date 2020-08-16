@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<html>
+<head>
+  <title>Main Page</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Mansalva|Oswald&display=swap" rel="stylesheet">
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container" style="margin-top:2%; margin-bottom:3%">
+  			  <h2>Posts list</h2>
+  			  <div id="accordion">
+  				{% for post in posts %}
+  			    <div class="card">
+  						<a class="card-link" data-toggle="collapse" href="#collapse+{{ post }}">
+  			      <div class="card-header">
+  								<span style="padding-left:15px">name: {{ post.full_name }}</span>
+  								<span class="float-right">{{ post.date }}</span>
+  			      </div>
+  						</a>
+  			      <div id="collapse+{{ post }}" class="collapse show" data-parent="#accordion">
+  			        <div class="card-body">
+  								{{ post.link }}
+  							</div>
+  			      </div>
+  			    </div>
+  				{% endfor %}
+  			  </div>
+  			</div>
+</body>
+</html>

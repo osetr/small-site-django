@@ -1,0 +1,31 @@
+version: "3"    
+
+volumes:
+        mysql_db_data_container:
+
+
+services:
+        app:
+                build: .
+                container_name: app
+                restart: always
+                ports:
+                        - "8000:8000"
+                depends_on:
+                        - mysql_db
+                entrypoint: /bin/bash -c "./entrypoint.sh;"
+                network_mode: host
+        mysql_db:
+                container_name: mysql
+                build: ./database
+                command: --default-authentication-plugin=mysql_native_password
+                restart: always
+                environment:
+                        MYSQL_DATABASE: 'my_app'
+                        MYSQL_ROOT_PASSWORD: ${PASSWORD}
+                ports:
+                        - 3306:3306
+                expose:
+                        - '3306'
+                volumes:
+                        - 'mysql_db_data_container:/var/lib/mysql'
