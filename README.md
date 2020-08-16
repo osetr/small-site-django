@@ -15,3 +15,5 @@ All in all, this site has only 2 endpoints:
 /cv/add/ - add post;
 
 /cv/show/ - show al posts;
+
+To check this site in place follow [link](http://34.65.255.211/cv/add/)
