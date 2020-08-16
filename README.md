@@ -6,4 +6,12 @@ After cloning this repository locally, be sure to add yourself .env file with im
 
 
 * SECRET_KEY = 'ffd3fccf1...eca3d111' (can be genereted by `$openssl rand -hex 32`)
-* PASSWORD = 'password'
+* PASSWORD = 'password' (mysql_db password for root user)
+
+Check http://127.0.0.1:8000/cv/add/
+
+All in all, tjis site has only 2 endpoints:
+
+/cv/add/ - add post;
+
+/cv/show/ - show al posts;
