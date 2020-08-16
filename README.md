@@ -1,6 +1,6 @@
 Task
 ====
-This small site, that provides the ability to add posts to the database and view them. All services are containerized, so you have the ability to quickly deploy this site anywhere. Follow instructions below.
+This small site provides the ability to add posts to the database and view them. All services are containerized, so you have the ability to quickly deploy this site anywhere. Follow instructions below.
 
 After cloning this repository locally, be sure to add yourself .env file with important keys for the database and for the app server itself inside current folder. In the following formats:
 
